@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Alberto Rueda Romero-->
+<Invoice
+    xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+    xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+    
+    <!--ID de personalización europeo compatible con la red PEPPOL.-->
+
+    <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0</cbc:CustomizationID>
+    
+    <!-- Perfil de interoperabilidad PEPPOL -->
+    
+    <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+    <cbc:ID>INV/2026/00004</cbc:ID>
+    <cbc:IssueDate>2026-05-05</cbc:IssueDate>
+    <cbc:DueDate>2026-05-05</cbc:DueDate>                                          <!-- algunos de los componentes básicos (cbc)-->
+    <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+    <cbc:DocumentCurrencyCode>USD</cbc:DocumentCurrencyCode>
+    
+    <cac:OrderReference>
+        <cbc:ID>INV/2026/00004</cbc:ID>
+    </cac:OrderReference>
+    
+    <cac:AccountingSupplierParty>                                                  <!-- algunos de los componentes agregaso (cac)-->
+        <cac:Party>
+            <cac:PartyName>
+                <cbc:Name>WillmanTech S.L.</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cac:Country>
+                    <cbc:IdentificationCode>US</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:Contact>
+                <cbc:Name>WillmanTech S.L.</cbc:Name>
+            </cac:Contact>
+        </cac:Party>
+    </cac:AccountingSupplierParty>
+    
+    <cac:AccountingCustomerParty>
+        <cac:Party>
+            <cac:PartyName>
+                <cbc:Name>Carlos Ruiz</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:CityName>Valencia</cbc:CityName>
+                <cac:Country>
+                    <cbc:IdentificationCode>ES</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:Contact>
+                <cbc:Name>Carlos Ruiz</cbc:Name>
+                <cbc:Telephone>+34 699 111 222</cbc:Telephone>
+                <cbc:ElectronicMail>cruiz.dev@ejemplo.com</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:AccountingCustomerParty>
+    
+    <cac:Delivery>
+        <cac:DeliveryLocation>
+            <cac:Address>
+                <cbc:CityName>Valencia</cbc:CityName>
+                <cac:Country>
+                    <cbc:IdentificationCode>ES</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:Address>
+        </cac:DeliveryLocation>
+        <cac:DeliveryParty>
+            <cac:PartyName>
+                <cbc:Name>Carlos Ruiz</cbc:Name>
+            </cac:PartyName>
+        </cac:DeliveryParty>
+    </cac:Delivery>
+    
+    <cac:PaymentMeans>
+        <cbc:PaymentMeansCode name="mutually defined">ZZZ</cbc:PaymentMeansCode>
+        <cbc:PaymentID>INV/2026/00004</cbc:PaymentID>
+    </cac:PaymentMeans>
+    
+    <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="USD">0.00</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="USD">490.00</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="USD">0.00</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:ID>E</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cbc:TaxExemptionReason>Exención fiscal</cbc:TaxExemptionReason>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    
+    <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="USD">490.00</cbc:LineExtensionAmount>
+        <cbc:TaxExclusiveAmount currencyID="USD">490.00</cbc:TaxExclusiveAmount>
+        <cbc:TaxInclusiveAmount currencyID="USD">490.00</cbc:TaxInclusiveAmount>
+        <cbc:PrepaidAmount currencyID="USD">0.00</cbc:PrepaidAmount>
+        <cbc:PayableAmount currencyID="USD">490.00</cbc:PayableAmount>
+    </cac:LegalMonetaryTotal>
+    
+    <cac:InvoiceLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="C62">1.0</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="USD">490.00</cbc:LineExtensionAmount>
+        
+        <cac:Item>
+            <cbc:Description>Portatil Asus</cbc:Description>
+            <cbc:Name>Portatil Asus</cbc:Name>
+            <cac:ClassifiedTaxCategory>
+                <cbc:ID>E</cbc:ID>
+                <cbc:Percent>0.0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        
+        <cac:Price>
+            <cbc:PriceAmount currencyID="USD">490.0</cbc:PriceAmount>
+        </cac:Price>
+    </cac:InvoiceLine>
+    
+</Invoice>
